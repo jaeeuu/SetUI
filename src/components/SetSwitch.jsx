@@ -21,7 +21,10 @@ const addStyles = stylex.create({
     width: "50px",
     height: "25px",
     borderRadius: "12.5px",
-    transition: "background-color 0.3s linear, padding 1s var(--spring-easing)",
+    transition: {
+      default: "background-color 0.3s linear, padding 1s var(--spring-easing)",
+      "@media (max-width: 575px)": "background-color 0.2s linear, padding 0.3s var(--spring-mobile)",
+    },
     backgroundColor: "#FBFBFB",
     padding: "1.5px 23.5px 1.5px 1.5px"
   },
@@ -61,12 +64,15 @@ export default function SetSwitch(props){
       onMouseDown={()=>setActive(true)}
       onMouseUp={()=>active() && setActive(false)}
       onMouseLeave={()=>active() && setActive(false)}
+      onTouchStart={()=>active() && setActive(true)}
+      onTouchEnd={()=>active() && setActive(false)}
+      onTouchCancel={()=>active() && setActive(false)}
     >
       <div 
         {...stylex.attrs(addStyles.switch, addStyles.switchOut,
-          (active() && !props.value()) && addStyles.switchOutActive,
-          (!active() && props.value()) && addStyles.switchOutChecked,
-          (active() && props.value()) && addStyles.switchOutCheckedActive,
+          (active() && !props.value) && addStyles.switchOutActive,
+          (!active() && props.value) && addStyles.switchOutChecked,
+          (active() && props.value) && addStyles.switchOutCheckedActive,
         )}
       >
         <div {...stylex.attrs(addStyles.switch, addStyles.switchIn)}>

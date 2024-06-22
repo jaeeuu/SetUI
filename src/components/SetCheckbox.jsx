@@ -8,7 +8,10 @@ const addStyles = stylex.create({
       borderRadius: '13px',
     },
     path2: {
-      transition: 'stroke-dashoffset 0.35s ease',
+      transition: {
+        default: 'stroke-dashoffset 0.35s ease',
+        "@media (max-width: 575px)": 'stroke-dashoffset 0.2s ease',
+      },
       strokeDashoffset: 22,
     },
     path2Checked: {
@@ -45,7 +48,7 @@ return (
         )}
         d="M4.02 13.47 8.52 17.956 19.45 6.99"
         fill="none"
-        stroke="#9AC5F4"
+        stroke="#5ca1e6"
         stroke-width="3"
         stroke-linecap="round"
         stroke-linejoin="round"

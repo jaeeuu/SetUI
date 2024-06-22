@@ -7,5 +7,6 @@ export default defineConfig(async () => ({
   build: {
    minify: 'esbuild',
    sourcemap: false,
+   assetsDir: 'SetUI',
   },
 }));
