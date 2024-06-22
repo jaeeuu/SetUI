@@ -1,0 +1,49 @@
+:root {
+  --spring-easing: linear(
+    0, 0.002, 0.008, 0.017, 0.031 1.9%, 0.07, 0.126 4.1%, 0.252 6.2%, 0.541 10.5%,
+    0.665, 0.779, 0.873, 0.951 18.3%, 0.983, 1.011, 1.036, 1.056, 1.073,
+    1.085 24.5%, 1.096, 1.102 27.2%, 1.103, 1.1 30.4%, 1.094 31.8%, 1.085 33.4%,
+    1.037 40.4%, 1.016 44.1%, 1.007, 1, 0.995, 0.991 52.5%, 0.989 55.4%,
+    0.99 58.8%, 0.998 71.8%, 1.001 79.1%, 1
+  );
+}
+@font-face {
+  font-family: 'Gowun Dodum';
+  font-style: normal;
+  font-display: block;
+  font-weight: 400;
+  src: url(./assets/fonts/gowun-dodum-korean-400-normal.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Gowun Dodum';
+  font-style: normal;
+  font-display: block;
+  font-weight: 400;
+  src: url(./assets/fonts/gowun-dodum-latin-400-normal.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Gowun Dodum';
+  font-style: normal;
+  font-display: block;
+  font-weight: 700;
+  src: url(./assets/fonts/gowun-dodum-bold.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'SF Font';
+  font-style: normal;
+  font-display: block;
+  font-weight: 900;
+  src: url(./assets/fonts/sf-clock.woff2) format('woff2');
+}
+html, body{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Gowun Dodum';
+}
+* {
+  box-sizing: border-box;
+}
+
+@stylex stylesheet;
