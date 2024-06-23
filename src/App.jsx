@@ -28,6 +28,7 @@ const addStyles = stylex.create({
     height: "45px",
     paddingLeft: "20px",
     paddingRight: "20px",
+    fontSize: "15px",
   }
 });
 
@@ -41,8 +42,10 @@ export default function App() {
         <span {...stylex.attrs(addStyles.text)}>SetUI : Solid & Fluent UI Framework</span>
         <SetSwitch value={switchValue()} setValue={() => setSwitchValue((prev) => !prev)} text="Normal Switch" />
         <SetSwitch value={false} setValue={() => true} text="Disabled Switch" disabled={true} />
-        <SetCheckbox isChecked={checkboxValue} setIsChecked={setCheckboxValue} text="Normal Checkbox" />
+        <SetCheckbox value={checkboxValue()} setValue={() => setCheckboxValue((prev) => !prev)} text="Normal Checkbox" />
+        <SetCheckbox value={false} setValue={() => true} text="Disabled Checkbox" disabled={true} />
         <input type="text" placeholder="Normal Input" {...stylex.attrs(comStyles.common, comStyles.input, interactStyles.input, addStyles.input)} />
+        <input type="text" placeholder="Disabled Input" {...stylex.attrs(comStyles.common, comStyles.input, interactStyles.input, addStyles.input, comStyles.disabled)} />
       </div>
     </div>
   );

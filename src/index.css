@@ -39,12 +39,13 @@
 html, body{
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  user-select: none;
   font-family: 'Gowun Dodum';
+  -webkit-touch-callout: none;
 }
 * {
   box-sizing: border-box;
+  touch-action: manipulation;
+  user-select: none;
 }
 
 @stylex stylesheet;

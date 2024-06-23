@@ -1,6 +1,6 @@
 import stylex from '@stylexjs/stylex';
 import { Show } from 'solid-js';
-import { flexStyles, interactStyles } from '../common/Group.stylex';
+import { comStyles, flexStyles, interactStyles } from '../common/Group.stylex';
 
 const addStyles = stylex.create({
     box: {
@@ -10,7 +10,7 @@ const addStyles = stylex.create({
     path2: {
       transition: {
         default: 'stroke-dashoffset 0.35s ease',
-        "@media (max-width: 575px)": 'stroke-dashoffset 0.2s ease',
+        "@media (max-width: 575px)": 'stroke-dashoffset 0.25s ease',
       },
       strokeDashoffset: 22,
     },
@@ -29,8 +29,8 @@ export default function SetCheckbox(props){
 
 return (
   <div
-    {...stylex.attrs(flexStyles.garo, addStyles.box, (!props.disabled) && interactStyles.common)}
-    onClick={() => props.setIsChecked((prev) => !prev)}
+    {...stylex.attrs(flexStyles.garo, addStyles.box, interactStyles.common, !!props.disabled && comStyles.disabled)}
+    onClick={() => props.setValue()}
   >
     <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -44,7 +44,7 @@ return (
       <path
         {...stylex.attrs(
           addStyles.path2,
-          props.isChecked() && addStyles.path2Checked
+          props.isChecked && addStyles.path2Checked
         )}
         d="M4.02 13.47 8.52 17.956 19.45 6.99"
         fill="none"
@@ -55,7 +55,7 @@ return (
         stroke-dasharray="22"
       />
     </svg>
-    <Show when={props.text}><div {...stylex.attrs(addStyles.text)}>{props.text}</div></Show>
+    <Show when={!!props.text}><div {...stylex.attrs(addStyles.text)}>{props.text}</div></Show>
   </div>
 );
 }

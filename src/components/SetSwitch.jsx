@@ -1,6 +1,6 @@
 import stylex from '@stylexjs/stylex';
 import { createSignal } from 'solid-js';
-import { flexStyles, interactStyles } from '../common/Group.stylex';
+import { comStyles, flexStyles, interactStyles } from '../common/Group.stylex';
 
 const addStyles = stylex.create({
   box: {
@@ -23,7 +23,7 @@ const addStyles = stylex.create({
     borderRadius: "12.5px",
     transition: {
       default: "background-color 0.3s linear, padding 1s var(--spring-easing)",
-      "@media (max-width: 575px)": "background-color 0.2s linear, padding 0.3s var(--spring-mobile)",
+      "@media (max-width: 575px)": "background-color 0.25s linear, padding 0.6s var(--spring-mobile)",
     },
     backgroundColor: "#FBFBFB",
     padding: "1.5px 23.5px 1.5px 1.5px"
@@ -47,11 +47,6 @@ const addStyles = stylex.create({
     boxShadow: "0 0 0 0.65px rgba(0, 0, 0, 0.1), 0 2.5px 0 rgba(0, 0, 0, 0.08)",
     background: "#fdfdfd",
   },
-  disabled: {
-    cursor: "default",
-    pointerEvents: "none",
-    opacity: 0.5,
-  },
 });
 
 export default function SetSwitch(props){
@@ -59,14 +54,12 @@ export default function SetSwitch(props){
 
   return(
     <div
-      {...stylex.attrs(flexStyles.garo, addStyles.box, interactStyles.common, !!props.disabled && addStyles.disabled)}
-      onClick={() => props.setValue()}
-      onMouseDown={()=>setActive(true)}
-      onMouseUp={()=>active() && setActive(false)}
-      onMouseLeave={()=>active() && setActive(false)}
-      onTouchStart={()=>active() && setActive(true)}
-      onTouchEnd={()=>active() && setActive(false)}
-      onTouchCancel={()=>active() && setActive(false)}
+      {...stylex.attrs(flexStyles.garo, addStyles.box, interactStyles.common, !!props.disabled && comStyles.disabled)}
+      onClick={() => {setActive(false); props.setValue();}}
+      onMouseDown={()=> setActive(true)}
+      onMouseLeave={()=> setActive(false)}
+      onTouchStart={()=> setActive(true)}
+      onTouchCancel={()=> setActive(false)}
     >
       <div 
         {...stylex.attrs(addStyles.switch, addStyles.switchOut,

@@ -15,6 +15,11 @@ export const comStyles = stylex.create({
       color: "#cfcfd0",
     },
   },
+  disabled: {
+    cursor: "default",
+    pointerEvents: "none",
+    opacity: 0.5,
+  },
 });
 
 export const interactStyles = stylex.create({
