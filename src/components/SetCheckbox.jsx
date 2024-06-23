@@ -44,7 +44,7 @@ return (
       <path
         {...stylex.attrs(
           addStyles.path2,
-          props.isChecked && addStyles.path2Checked
+          props.value && addStyles.path2Checked
         )}
         d="M4.02 13.47 8.52 17.956 19.45 6.99"
         fill="none"
