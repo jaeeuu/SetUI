@@ -7,13 +7,16 @@ import SetCheckbox from './components/SetCheckbox';
 const addStyles = stylex.create({
   root: {
     width: "100vw",
+    height: "100vh",
+    background: "linear-gradient(120deg, rgba(254,247,243,1) 0%, rgba(249,241,250,1) 15%, rgba(237,245,254,1) 50%, rgba(238,251,243,1) 100%)",
+    padding: "20px",
   },
   box: {
-    margin: "20px",
     padding: "100px 20px 100px 20px",
     gap: "30px",
-    borderRadius: "15px",
-    background: "linear-gradient(120deg, rgba(254,247,243,1) 0%, rgba(249,241,250,1) 15%, rgba(237,245,254,1) 50%, rgba(238,251,243,1) 100%)",
+    borderRadius: "20px",
+    backgroundColor: "rgba(255,255,255,0.35)",
+    backdropFilter: "blur(60px)",
   },
   text: {
     fontFamily: "'SF Font'",

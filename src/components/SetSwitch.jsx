@@ -23,7 +23,7 @@ const addStyles = stylex.create({
     borderRadius: "12.5px",
     transition: {
       default: "background-color 0.3s linear, padding 1s var(--spring-easing)",
-      "@media (max-width: 575px)": "background-color 0.25s linear, padding 0.6s var(--spring-mobile)",
+      "@media (max-width: 575px)": "background-color 0.25s linear, padding 0.8s var(--spring-easing)",
     },
     backgroundColor: "#FBFBFB",
     padding: "1.5px 23.5px 1.5px 1.5px"

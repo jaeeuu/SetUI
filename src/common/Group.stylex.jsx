@@ -28,7 +28,7 @@ export const interactStyles = stylex.create({
     transition: {
       default: "background-color 0.3s ease, transform 0.8s var(--spring-easing)",
       ":active": "background-color 0.3s ease, transform 0.25s ease",
-      "@media (hover: none)": "background-color 0.2s ease, transform 0.3s var(--spring-mobile)",
+      // "@media (hover: none)": "background-color 0.3s ease, transform 0.8s var(--spring-easing)",
     },
     backgroundColor: {
       default: "#fafafa",
@@ -36,6 +36,7 @@ export const interactStyles = stylex.create({
         default: "#fcfcfc",
         "@media (hover: none)": null,
       },
+      ":active": "#f0f0f0",
     },
     transform: {
       default: "scale(1)",
@@ -51,7 +52,7 @@ export const interactStyles = stylex.create({
     transition: {
       default: "background-color 0.4s linear, transform 0.8s var(--spring-easing), box-shadow 0.4s ease",
       ":focus-within": "background-color 0.3s linear, transform 0.3s ease, box-shadow 0.3s ease",
-      "@media (hover: none)": "background-color 0.2s linear, transform 0.3s var(--spring-mobile), box-shadow 0.2s ease",
+      // "@media (hover: none)": "background-color 0.2s linear, transform 0.3s var(--spring-mobile), box-shadow 0.2s ease",
     },
     backgroundColor: {
       default: "#fafafa",
