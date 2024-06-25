@@ -15,7 +15,7 @@ const addStyles = stylex.create({
     borderStyle: "solid",
     borderColor: "#e8eae9",
     pointerEvents: "none",
-    overflow: "visible"
+    overflow: "visible",
   },
   switchOut: {
     width: "50px",
@@ -23,10 +23,10 @@ const addStyles = stylex.create({
     borderRadius: "12.5px",
     transition: {
       default: "background-color 0.3s linear, padding 1s var(--spring-easing)",
-      "@media (max-width: 575px)": "background-color 0.25s linear, padding 0.8s var(--spring-easing)",
+      "@media (max-width: 575px)": "background-color 0.25s linear, padding 0.8s var(--spring-mobile)",
     },
     backgroundColor: "#FBFBFB",
-    padding: "1.5px 23.5px 1.5px 1.5px"
+    padding: "1.5px 24px 1.5px 1.5px"
   },
   switchOutActive: {
     backgroundColor: "#E8EAE9",
@@ -34,7 +34,7 @@ const addStyles = stylex.create({
   },
   switchOutChecked: {
     backgroundColor: "#9AC5F4",
-    padding: "1.5px 1.5px 1.5px 23.5px"
+    padding: "1.5px 1.5px 1.5px 24px"
   },
   switchOutCheckedActive: {
     backgroundColor: "#7faee0",
@@ -44,8 +44,16 @@ const addStyles = stylex.create({
     width: "100%",
     height: "100%",
     borderRadius: "11px",
-    boxShadow: "0 0 0 0.65px rgba(0, 0, 0, 0.1), 0 2.5px 0 rgba(0, 0, 0, 0.08)",
+    boxShadow: "0 0 0 1px rgba(0, 0, 0, 0.1), 1px 1px 0px 1px rgba(0, 0, 0, 0.1)",
     background: "#fdfdfd",
+    transform: 'scale(0.75)',
+    transition: {
+      default: "transform 1s var(--spring-easing)",
+      "@media (max-width: 575px)": "transform 0.8s var(--spring-mobile)",
+    }
+  },
+  switchInChecked: {
+    transform: 'scale(1)',
   },
 });
 
@@ -68,7 +76,7 @@ export default function SetSwitch(props){
           (active() && props.value) && addStyles.switchOutCheckedActive,
         )}
       >
-        <div {...stylex.attrs(addStyles.switch, addStyles.switchIn)}>
+        <div {...stylex.attrs(addStyles.switch, addStyles.switchIn, props.value && addStyles.switchInChecked)}>
           &nbsp;
         </div>
       </div>
